@@ -13,25 +13,22 @@
 
 ActiveRecord::Schema.define(version: 20130830004222) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "public_keys", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "user_id"
-    t.text     "value"
+    t.string   "name",       limit: 255
+    t.integer  "user_id",    limit: 4
+    t.text     "value",      limit: 65535
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "email"
-    t.string   "password_digest"
+    t.string   "email",                  limit: 255
+    t.string   "password_digest",        limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "password_reset_token"
+    t.string   "password_reset_token",   limit: 255
     t.datetime "password_reset_sent_at"
-    t.string   "username"
+    t.string   "username",               limit: 255
   end
 
 end

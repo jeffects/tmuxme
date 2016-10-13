@@ -13,8 +13,8 @@
 # gem 'pg'
 #
 development:
-  adapter: postgresql
-  encoding: unicode
+  adapter: mysql2
+  encoding: utf8
   database: tmuxme_development
   pool: 5
   username: tmuxme
@@ -39,20 +39,21 @@ development:
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test: &test
-  adapter: postgresql
-  encoding: unicode
+  adapter: mysql2
+  encoding: utf8
   database: tmuxme_test
   pool: 5
   username: tmuxme
   password:
 
 production:
-  adapter: postgresql
-  encoding: unicode
+  adapter: mysql2
+  encoding: utf8
   database: tmuxme_production
   pool: 5
-  username: tmuxme
+  username:
   password:
+  host:
 
 cucumber:
   <<: *test
