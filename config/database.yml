@@ -51,9 +51,9 @@ production:
   encoding: utf8
   database: tmuxme_production
   pool: 5
-  username:
-  password:
-  host:
+  username: <%= ENV['DATABASE_USERNAME'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  host: <%= ENV['DATABASE_HOST'] %>
 
 cucumber:
   <<: *test
