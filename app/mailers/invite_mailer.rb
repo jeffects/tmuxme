@@ -1,5 +1,5 @@
 class InviteMailer < ActionMailer::Base
-  default from: "noreply@tmux.me"
+  default from: "noreply@#{ENV['SMTP_DOMAIN']}"
 
   def invite(system_user, pair_users, port_number)
     @system_user = system_user
